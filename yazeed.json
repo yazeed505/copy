@@ -1,0 +1,1063 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "argoproj.io/v1alpha1",
+            "kind": "Application",
+            "metadata": {
+                "creationTimestamp": "2022-08-25T11:52:05Z",
+                "generation": 36,
+                "name": "guestbook",
+                "namespace": "argocd",
+                "resourceVersion": "10822",
+                "uid": "421caea4-a295-409a-9874-4f55dff4f27a"
+            },
+            "spec": {
+                "destination": {
+                    "namespace": "default",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "project": "default",
+                "source": {
+                    "path": "apps",
+                    "repoURL": "https://github.com/argoproj/argocd-example-apps.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            "status": {
+                "health": {
+                    "status": "Healthy"
+                },
+                "history": [
+                    {
+                        "deployStartedAt": "2022-08-25T11:52:12Z",
+                        "deployedAt": "2022-08-25T11:52:16Z",
+                        "id": 0,
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "apps",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps.git",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                ],
+                "operationState": {
+                    "finishedAt": "2022-08-25T11:52:16Z",
+                    "message": "successfully synced (all tasks run)",
+                    "operation": {
+                        "initiatedBy": {
+                            "username": "admin"
+                        },
+                        "retry": {},
+                        "sync": {
+                            "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                            "syncStrategy": {
+                                "hook": {}
+                            }
+                        }
+                    },
+                    "phase": "Succeeded",
+                    "startedAt": "2022-08-25T11:52:12Z",
+                    "syncResult": {
+                        "resources": [
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Namespace",
+                                "message": "namespace/sync-waves created",
+                                "name": "sync-waves",
+                                "namespace": "default",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Namespace",
+                                "message": "namespace/kustomize-guestbook created",
+                                "name": "kustomize-guestbook",
+                                "namespace": "default",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Namespace",
+                                "message": "namespace/helm-hooks created",
+                                "name": "helm-hooks",
+                                "namespace": "default",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Namespace",
+                                "message": "namespace/helm-guestbook created",
+                                "name": "helm-guestbook",
+                                "namespace": "default",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "argoproj.io",
+                                "hookPhase": "Running",
+                                "kind": "Application",
+                                "message": "application.argoproj.io/sync-waves created",
+                                "name": "sync-waves",
+                                "namespace": "argocd",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1alpha1"
+                            },
+                            {
+                                "group": "argoproj.io",
+                                "hookPhase": "Running",
+                                "kind": "Application",
+                                "message": "application.argoproj.io/kustomize-guestbook created",
+                                "name": "kustomize-guestbook",
+                                "namespace": "argocd",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1alpha1"
+                            },
+                            {
+                                "group": "argoproj.io",
+                                "hookPhase": "Running",
+                                "kind": "Application",
+                                "message": "application.argoproj.io/helm-guestbook created",
+                                "name": "helm-guestbook",
+                                "namespace": "argocd",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1alpha1"
+                            },
+                            {
+                                "group": "argoproj.io",
+                                "hookPhase": "Running",
+                                "kind": "Application",
+                                "message": "application.argoproj.io/helm-hooks created",
+                                "name": "helm-hooks",
+                                "namespace": "argocd",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1alpha1"
+                            }
+                        ],
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "apps",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps.git",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                },
+                "reconciledAt": "2022-08-25T12:05:26Z",
+                "resources": [
+                    {
+                        "kind": "Namespace",
+                        "name": "helm-guestbook",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "kind": "Namespace",
+                        "name": "helm-hooks",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "kind": "Namespace",
+                        "name": "kustomize-guestbook",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "kind": "Namespace",
+                        "name": "sync-waves",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "kind": "Application",
+                        "name": "helm-guestbook",
+                        "namespace": "argocd",
+                        "status": "Synced",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "kind": "Application",
+                        "name": "helm-hooks",
+                        "namespace": "argocd",
+                        "status": "Synced",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "kind": "Application",
+                        "name": "kustomize-guestbook",
+                        "namespace": "argocd",
+                        "status": "Synced",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "kind": "Application",
+                        "name": "sync-waves",
+                        "namespace": "argocd",
+                        "status": "Synced",
+                        "version": "v1alpha1"
+                    }
+                ],
+                "sourceType": "Helm",
+                "summary": {},
+                "sync": {
+                    "comparedTo": {
+                        "destination": {
+                            "namespace": "default",
+                            "server": "https://kubernetes.default.svc"
+                        },
+                        "source": {
+                            "path": "apps",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps.git",
+                            "targetRevision": "HEAD"
+                        }
+                    },
+                    "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                    "status": "Synced"
+                }
+            }
+        },
+        {
+            "apiVersion": "argoproj.io/v1alpha1",
+            "kind": "Application",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"finalizers\":[\"resources-finalizer.argocd.argoproj.io\"],\"labels\":{\"app.kubernetes.io/instance\":\"guestbook\"},\"name\":\"helm-guestbook\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"helm-guestbook\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"default\",\"source\":{\"path\":\"helm-guestbook\",\"repoURL\":\"https://github.com/argoproj/argocd-example-apps\",\"targetRevision\":\"HEAD\"}}}\n"
+                },
+                "creationTimestamp": "2022-08-25T11:52:16Z",
+                "finalizers": [
+                    "resources-finalizer.argocd.argoproj.io"
+                ],
+                "generation": 35,
+                "labels": {
+                    "app.kubernetes.io/instance": "guestbook"
+                },
+                "name": "helm-guestbook",
+                "namespace": "argocd",
+                "resourceVersion": "10817",
+                "uid": "7cbff739-96cd-47e4-9fc8-e71cb8d59c07"
+            },
+            "spec": {
+                "destination": {
+                    "namespace": "helm-guestbook",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "project": "default",
+                "source": {
+                    "path": "helm-guestbook",
+                    "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                    "targetRevision": "HEAD"
+                }
+            },
+            "status": {
+                "health": {
+                    "status": "Healthy"
+                },
+                "history": [
+                    {
+                        "deployStartedAt": "2022-08-25T11:52:29Z",
+                        "deployedAt": "2022-08-25T11:52:30Z",
+                        "id": 0,
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "helm-guestbook",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                ],
+                "operationState": {
+                    "finishedAt": "2022-08-25T11:52:30Z",
+                    "message": "successfully synced (all tasks run)",
+                    "operation": {
+                        "initiatedBy": {
+                            "username": "admin"
+                        },
+                        "retry": {},
+                        "sync": {
+                            "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                            "syncStrategy": {
+                                "hook": {}
+                            }
+                        }
+                    },
+                    "phase": "Succeeded",
+                    "startedAt": "2022-08-25T11:52:29Z",
+                    "syncResult": {
+                        "resources": [
+                            {
+                                "group": "",
+                                "hookPhase": "Running",
+                                "kind": "Service",
+                                "message": "service/helm-guestbook created",
+                                "name": "helm-guestbook",
+                                "namespace": "helm-guestbook",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "apps",
+                                "hookPhase": "Running",
+                                "kind": "Deployment",
+                                "message": "deployment.apps/helm-guestbook created",
+                                "name": "helm-guestbook",
+                                "namespace": "helm-guestbook",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            }
+                        ],
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "helm-guestbook",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                },
+                "reconciledAt": "2022-08-25T12:05:26Z",
+                "resources": [
+                    {
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Service",
+                        "name": "helm-guestbook",
+                        "namespace": "helm-guestbook",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "apps",
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Deployment",
+                        "name": "helm-guestbook",
+                        "namespace": "helm-guestbook",
+                        "status": "Synced",
+                        "version": "v1"
+                    }
+                ],
+                "sourceType": "Helm",
+                "summary": {
+                    "images": [
+                        "gcr.io/heptio-images/ks-guestbook-demo:0.1"
+                    ]
+                },
+                "sync": {
+                    "comparedTo": {
+                        "destination": {
+                            "namespace": "helm-guestbook",
+                            "server": "https://kubernetes.default.svc"
+                        },
+                        "source": {
+                            "path": "helm-guestbook",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    },
+                    "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                    "status": "Synced"
+                }
+            }
+        },
+        {
+            "apiVersion": "argoproj.io/v1alpha1",
+            "kind": "Application",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"finalizers\":[\"resources-finalizer.argocd.argoproj.io\"],\"labels\":{\"app.kubernetes.io/instance\":\"guestbook\"},\"name\":\"helm-hooks\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"helm-hooks\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"default\",\"source\":{\"path\":\"helm-hooks\",\"repoURL\":\"https://github.com/argoproj/argocd-example-apps\",\"targetRevision\":\"HEAD\"}}}\n"
+                },
+                "creationTimestamp": "2022-08-25T11:52:16Z",
+                "finalizers": [
+                    "resources-finalizer.argocd.argoproj.io"
+                ],
+                "generation": 49,
+                "labels": {
+                    "app.kubernetes.io/instance": "guestbook"
+                },
+                "name": "helm-hooks",
+                "namespace": "argocd",
+                "resourceVersion": "10820",
+                "uid": "7b5934fc-74ff-430e-9be0-a24493835caa"
+            },
+            "spec": {
+                "destination": {
+                    "namespace": "helm-hooks",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "project": "default",
+                "source": {
+                    "path": "helm-hooks",
+                    "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                    "targetRevision": "HEAD"
+                }
+            },
+            "status": {
+                "health": {
+                    "status": "Healthy"
+                },
+                "history": [
+                    {
+                        "deployStartedAt": "2022-08-25T11:52:30Z",
+                        "deployedAt": "2022-08-25T11:53:44Z",
+                        "id": 0,
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "helm-hooks",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                ],
+                "operationState": {
+                    "finishedAt": "2022-08-25T11:53:44Z",
+                    "message": "successfully synced (no more tasks)",
+                    "operation": {
+                        "initiatedBy": {
+                            "username": "admin"
+                        },
+                        "retry": {},
+                        "sync": {
+                            "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                            "syncStrategy": {
+                                "hook": {}
+                            }
+                        }
+                    },
+                    "phase": "Succeeded",
+                    "startedAt": "2022-08-25T11:52:30Z",
+                    "syncResult": {
+                        "resources": [
+                            {
+                                "group": "batch",
+                                "hookPhase": "Succeeded",
+                                "hookType": "PreSync",
+                                "kind": "Job",
+                                "message": "job.batch/upgrade-sql-schema53e28ff-presync-1661428350 created",
+                                "name": "upgrade-sql-schema53e28ff-presync-1661428350",
+                                "namespace": "helm-hooks",
+                                "syncPhase": "PreSync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "batch",
+                                "hookPhase": "Succeeded",
+                                "hookType": "PreSync",
+                                "kind": "Job",
+                                "message": "job.batch/maint-page-up created",
+                                "name": "maint-page-up",
+                                "namespace": "helm-hooks",
+                                "syncPhase": "PreSync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "apps",
+                                "hookPhase": "Succeeded",
+                                "kind": "ReplicaSet",
+                                "message": "replicaset.apps/frontend created",
+                                "name": "frontend",
+                                "namespace": "helm-hooks",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Service",
+                                "message": "service/frontend created",
+                                "name": "frontend",
+                                "namespace": "helm-hooks",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "batch",
+                                "hookPhase": "Succeeded",
+                                "hookType": "PostSync",
+                                "kind": "Job",
+                                "message": "job.batch/maint-page-down created",
+                                "name": "maint-page-down",
+                                "namespace": "helm-hooks",
+                                "syncPhase": "PostSync",
+                                "version": "v1"
+                            }
+                        ],
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "helm-hooks",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                },
+                "reconciledAt": "2022-08-25T12:05:26Z",
+                "resources": [
+                    {
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Service",
+                        "name": "frontend",
+                        "namespace": "helm-hooks",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "apps",
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "ReplicaSet",
+                        "name": "frontend",
+                        "namespace": "helm-hooks",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hook": true,
+                        "kind": "Job",
+                        "name": "maint-page-down",
+                        "namespace": "helm-hooks",
+                        "requiresPruning": true,
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hook": true,
+                        "kind": "Job",
+                        "name": "maint-page-up",
+                        "namespace": "helm-hooks",
+                        "requiresPruning": true,
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hook": true,
+                        "kind": "Job",
+                        "name": "upgrade-sql-schema53e28ff-presync-1661428350",
+                        "namespace": "helm-hooks",
+                        "requiresPruning": true,
+                        "version": "v1"
+                    }
+                ],
+                "sourceType": "Directory",
+                "summary": {
+                    "images": [
+                        "alpine:latest",
+                        "nginx:latest"
+                    ]
+                },
+                "sync": {
+                    "comparedTo": {
+                        "destination": {
+                            "namespace": "helm-hooks",
+                            "server": "https://kubernetes.default.svc"
+                        },
+                        "source": {
+                            "path": "helm-hooks",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    },
+                    "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                    "status": "Synced"
+                }
+            }
+        },
+        {
+            "apiVersion": "argoproj.io/v1alpha1",
+            "kind": "Application",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"finalizers\":[\"resources-finalizer.argocd.argoproj.io\"],\"labels\":{\"app.kubernetes.io/instance\":\"guestbook\"},\"name\":\"kustomize-guestbook\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"kustomize-guestbook\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"default\",\"source\":{\"path\":\"kustomize-guestbook\",\"repoURL\":\"https://github.com/argoproj/argocd-example-apps\",\"targetRevision\":\"HEAD\"}}}\n"
+                },
+                "creationTimestamp": "2022-08-25T11:52:16Z",
+                "finalizers": [
+                    "resources-finalizer.argocd.argoproj.io"
+                ],
+                "generation": 34,
+                "labels": {
+                    "app.kubernetes.io/instance": "guestbook"
+                },
+                "name": "kustomize-guestbook",
+                "namespace": "argocd",
+                "resourceVersion": "10819",
+                "uid": "06169237-50a6-442c-833a-592b0a596e36"
+            },
+            "spec": {
+                "destination": {
+                    "namespace": "kustomize-guestbook",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "project": "default",
+                "source": {
+                    "path": "kustomize-guestbook",
+                    "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                    "targetRevision": "HEAD"
+                }
+            },
+            "status": {
+                "health": {
+                    "status": "Healthy"
+                },
+                "history": [
+                    {
+                        "deployStartedAt": "2022-08-25T11:52:31Z",
+                        "deployedAt": "2022-08-25T11:52:33Z",
+                        "id": 0,
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "kustomize-guestbook",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                ],
+                "operationState": {
+                    "finishedAt": "2022-08-25T11:52:33Z",
+                    "message": "successfully synced (all tasks run)",
+                    "operation": {
+                        "initiatedBy": {
+                            "username": "admin"
+                        },
+                        "retry": {},
+                        "sync": {
+                            "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                            "syncStrategy": {
+                                "hook": {}
+                            }
+                        }
+                    },
+                    "phase": "Succeeded",
+                    "startedAt": "2022-08-25T11:52:31Z",
+                    "syncResult": {
+                        "resources": [
+                            {
+                                "group": "",
+                                "hookPhase": "Running",
+                                "kind": "Service",
+                                "message": "service/kustomize-guestbook-ui created",
+                                "name": "kustomize-guestbook-ui",
+                                "namespace": "kustomize-guestbook",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "apps",
+                                "hookPhase": "Running",
+                                "kind": "Deployment",
+                                "message": "deployment.apps/kustomize-guestbook-ui created",
+                                "name": "kustomize-guestbook-ui",
+                                "namespace": "kustomize-guestbook",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            }
+                        ],
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "kustomize-guestbook",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                },
+                "reconciledAt": "2022-08-25T12:05:26Z",
+                "resources": [
+                    {
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Service",
+                        "name": "kustomize-guestbook-ui",
+                        "namespace": "kustomize-guestbook",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "apps",
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Deployment",
+                        "name": "kustomize-guestbook-ui",
+                        "namespace": "kustomize-guestbook",
+                        "status": "Synced",
+                        "version": "v1"
+                    }
+                ],
+                "sourceType": "Kustomize",
+                "summary": {
+                    "images": [
+                        "gcr.io/heptio-images/ks-guestbook-demo:0.1"
+                    ]
+                },
+                "sync": {
+                    "comparedTo": {
+                        "destination": {
+                            "namespace": "kustomize-guestbook",
+                            "server": "https://kubernetes.default.svc"
+                        },
+                        "source": {
+                            "path": "kustomize-guestbook",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    },
+                    "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                    "status": "Synced"
+                }
+            }
+        },
+        {
+            "apiVersion": "argoproj.io/v1alpha1",
+            "kind": "Application",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"name\":\"sample\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"sample\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"default\",\"source\":{\"path\":\"sample\",\"repoURL\":\"https://git.example.com/bob/sample-config.git\",\"targetRevision\":\"HEAD\"},\"syncPolicy\":{\"automated\":{\"allowEmpty\":false,\"prune\":true,\"selfHeal\":true},\"retry\":{\"backoff\":{\"duration\":\"5s\",\"factor\":2,\"maxDuration\":\"3m\"},\"limit\":5},\"syncOptions\":[\"Validate=false\",\"CreateNamespace=true\",\"PrunePropagationPolicy=foreground\",\"PruneLast=true\"]}}}\n"
+                },
+                "creationTimestamp": "2022-08-25T11:49:10Z",
+                "generation": 34,
+                "name": "sample",
+                "namespace": "argocd",
+                "resourceVersion": "10818",
+                "uid": "2ca7fc56-e69a-4e95-a3f8-d9edd97cdfad"
+            },
+            "spec": {
+                "destination": {
+                    "namespace": "sample",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "project": "default",
+                "source": {
+                    "path": "sample",
+                    "repoURL": "https://git.example.com/bob/sample-config.git",
+                    "targetRevision": "HEAD"
+                },
+                "syncPolicy": {
+                    "automated": {
+                        "allowEmpty": false,
+                        "prune": true,
+                        "selfHeal": true
+                    },
+                    "retry": {
+                        "backoff": {
+                            "duration": "5s",
+                            "factor": 2,
+                            "maxDuration": "3m"
+                        },
+                        "limit": 5
+                    },
+                    "syncOptions": [
+                        "Validate=false",
+                        "CreateNamespace=true",
+                        "PrunePropagationPolicy=foreground",
+                        "PruneLast=true"
+                    ]
+                }
+            },
+            "status": {
+                "health": {
+                    "status": "Healthy"
+                },
+                "reconciledAt": "2022-08-25T12:05:26Z",
+                "sourceType": "Directory",
+                "sync": {
+                    "comparedTo": {
+                        "destination": {
+                            "namespace": "sample",
+                            "server": "https://kubernetes.default.svc"
+                        },
+                        "source": {
+                            "path": "sample",
+                            "repoURL": "https://git.example.com/bob/sample-config.git",
+                            "targetRevision": "HEAD"
+                        }
+                    },
+                    "revision": "6496594f49591bb836868f7d9c813b7ebdd05fb7",
+                    "status": "Synced"
+                }
+            }
+        },
+        {
+            "apiVersion": "argoproj.io/v1alpha1",
+            "kind": "Application",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"finalizers\":[\"resources-finalizer.argocd.argoproj.io\"],\"labels\":{\"app.kubernetes.io/instance\":\"guestbook\"},\"name\":\"sync-waves\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"sync-waves\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"default\",\"source\":{\"path\":\"sync-waves\",\"repoURL\":\"https://github.com/argoproj/argocd-example-apps\",\"targetRevision\":\"HEAD\"}}}\n"
+                },
+                "creationTimestamp": "2022-08-25T11:52:16Z",
+                "finalizers": [
+                    "resources-finalizer.argocd.argoproj.io"
+                ],
+                "generation": 53,
+                "labels": {
+                    "app.kubernetes.io/instance": "guestbook"
+                },
+                "name": "sync-waves",
+                "namespace": "argocd",
+                "resourceVersion": "10821",
+                "uid": "6b737740-9363-4b97-91c0-224b6f9aac99"
+            },
+            "spec": {
+                "destination": {
+                    "namespace": "sync-waves",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "project": "default",
+                "source": {
+                    "path": "sync-waves",
+                    "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                    "targetRevision": "HEAD"
+                }
+            },
+            "status": {
+                "health": {
+                    "status": "Healthy"
+                },
+                "history": [
+                    {
+                        "deployStartedAt": "2022-08-25T11:52:32Z",
+                        "deployedAt": "2022-08-25T11:53:54Z",
+                        "id": 0,
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "sync-waves",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                ],
+                "operationState": {
+                    "finishedAt": "2022-08-25T11:53:54Z",
+                    "message": "successfully synced (no more tasks)",
+                    "operation": {
+                        "initiatedBy": {
+                            "username": "admin"
+                        },
+                        "retry": {},
+                        "sync": {
+                            "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                            "syncStrategy": {
+                                "hook": {}
+                            }
+                        }
+                    },
+                    "phase": "Succeeded",
+                    "startedAt": "2022-08-25T11:52:32Z",
+                    "syncResult": {
+                        "resources": [
+                            {
+                                "group": "batch",
+                                "hookPhase": "Succeeded",
+                                "hookType": "PreSync",
+                                "kind": "Job",
+                                "message": "job.batch/upgrade-sql-schema53e28ff-presync-1661428352 created",
+                                "name": "upgrade-sql-schema53e28ff-presync-1661428352",
+                                "namespace": "sync-waves",
+                                "syncPhase": "PreSync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Service",
+                                "message": "service/backend created",
+                                "name": "backend",
+                                "namespace": "sync-waves",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "apps",
+                                "hookPhase": "Succeeded",
+                                "kind": "ReplicaSet",
+                                "message": "replicaset.apps/backend created",
+                                "name": "backend",
+                                "namespace": "sync-waves",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "batch",
+                                "hookPhase": "Succeeded",
+                                "hookType": "Sync",
+                                "kind": "Job",
+                                "message": "job.batch/maint-page-up created",
+                                "name": "maint-page-up",
+                                "namespace": "sync-waves",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "",
+                                "hookPhase": "Succeeded",
+                                "kind": "Service",
+                                "message": "service/frontend created",
+                                "name": "frontend",
+                                "namespace": "sync-waves",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "apps",
+                                "hookPhase": "Succeeded",
+                                "kind": "ReplicaSet",
+                                "message": "replicaset.apps/frontend created",
+                                "name": "frontend",
+                                "namespace": "sync-waves",
+                                "status": "Synced",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            },
+                            {
+                                "group": "batch",
+                                "hookPhase": "Succeeded",
+                                "hookType": "Sync",
+                                "kind": "Job",
+                                "message": "job.batch/maint-page-down created",
+                                "name": "maint-page-down",
+                                "namespace": "sync-waves",
+                                "syncPhase": "Sync",
+                                "version": "v1"
+                            }
+                        ],
+                        "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                        "source": {
+                            "path": "sync-waves",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    }
+                },
+                "reconciledAt": "2022-08-25T12:05:26Z",
+                "resources": [
+                    {
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Service",
+                        "name": "backend",
+                        "namespace": "sync-waves",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "Service",
+                        "name": "frontend",
+                        "namespace": "sync-waves",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "apps",
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "ReplicaSet",
+                        "name": "backend",
+                        "namespace": "sync-waves",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "apps",
+                        "health": {
+                            "status": "Healthy"
+                        },
+                        "kind": "ReplicaSet",
+                        "name": "frontend",
+                        "namespace": "sync-waves",
+                        "status": "Synced",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hook": true,
+                        "kind": "Job",
+                        "name": "maint-page-down",
+                        "namespace": "sync-waves",
+                        "requiresPruning": true,
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hook": true,
+                        "kind": "Job",
+                        "name": "maint-page-up",
+                        "namespace": "sync-waves",
+                        "requiresPruning": true,
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hook": true,
+                        "kind": "Job",
+                        "name": "upgrade-sql-schema53e28ff-presync-1661428352",
+                        "namespace": "sync-waves",
+                        "requiresPruning": true,
+                        "version": "v1"
+                    }
+                ],
+                "sourceType": "Directory",
+                "summary": {
+                    "images": [
+                        "alpine:latest",
+                        "nginx:latest"
+                    ]
+                },
+                "sync": {
+                    "comparedTo": {
+                        "destination": {
+                            "namespace": "sync-waves",
+                            "server": "https://kubernetes.default.svc"
+                        },
+                        "source": {
+                            "path": "sync-waves",
+                            "repoURL": "https://github.com/argoproj/argocd-example-apps",
+                            "targetRevision": "HEAD"
+                        }
+                    },
+                    "revision": "53e28ff20cc530b9ada2173fbbd64d48338583ba",
+                    "status": "Synced"
+                }
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
